@@ -1,12 +1,25 @@
 // Lista de prerequisitos
 const prerequisitos = {
-  "MAT-132": ["MAT-123"], // Cálculo I requiere Álgebra Lineal
-  "MAT-251": ["MAT-123"], // Investigación Operativa I requiere Álgebra Lineal
-  "MAT-142": ["MAT-123"], // Probabilidad y Estadística I requiere Álgebra Lineal
-  "SIS-112": ["SIS-111"], // Programación I requiere Intro a la Programación
-  "SIS-133": ["MAT-122","SIS-123"], // etc.
-  "FHC-102": [] // sin prerequisitos
-  // Y así sigues para demás materias
+  //Segundo Semestre
+  "MAT-132": ["MAT-123"],
+  "MAT-251": ["MAT-123"], 
+  "MAT-142": ["MAT-123"], 
+  "SIS-112": ["SIS-111"], 
+  "SIS-133": ["MAT-122", "SIS-123"], 
+  "FHC-102": []
+
+  //Tercer Semestre
+  "MAT-133": ["MAT-132"],
+  "FIS-111": ["MAT-132"],
+  "MAT-143": ["MAT-142"],
+  "SIS-113": ["SIS-112"],
+  "SIS_122": ["SIS-112"],
+  "IND-260": [],
+  "FIL-207": []
+
+  //Cuarto Semestre
+  "MAT-252": ["MAT-251"],
+  "SIS-211": ["SIS-113"]
 };
 
 // Cargar progreso guardado
