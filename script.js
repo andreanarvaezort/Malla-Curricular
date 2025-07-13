@@ -106,14 +106,6 @@ function actualizarBloqueos() {
   });
 }
 
-// === Marcar materias completadas ===
-progreso.forEach(codigo => {
-  const materia = document.querySelector(`.materia[data-codigo="${codigo}"]`);
-  if (materia) materia.classList.add("completada");
-});
-
-actualizarBloqueos();
-
 // === Lógica de clics ===
 document.querySelectorAll(".materia").forEach(materia => {
   materia.addEventListener("click", () => {
@@ -131,6 +123,13 @@ document.querySelectorAll(".materia").forEach(materia => {
     actualizarBloqueos();
   });
 });
+
+// === Marcar materias completadas ===
+progreso.forEach(codigo => {
+  const materia = document.querySelector(`.materia[data-codigo="${codigo}"]`);
+  if (materia) materia.classList.add("completada");
+});
+actualizarBloqueos();
 
 // === Botón de modo claro/oscuro ===
 document.getElementById("modoToggle").addEventListener("click", () => {
