@@ -161,6 +161,7 @@ main {
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
   position: relative;
+  animation: fadeSlideDown 1s ease-out forwards;
 }
 .materia span {
   display: block;
@@ -169,7 +170,7 @@ main {
   color: var(--primary);
   font-weight: 500;
 }
-.materia:hover {
+.materia:not(.bloqueada):hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
