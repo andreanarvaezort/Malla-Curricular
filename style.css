@@ -1,76 +1,97 @@
-body {
-  background-color: #374375;
-  color: #fffcf5;
-  font-family: 'Urbanist', sans-serif;
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malla Curricular - Ingeniería de Sistemas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700&family=Castoro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    header {
+      position: relative;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-bottom: 1px solid var(--accent);
+      overflow: hidden;
+    }
 
-header {
-  text-align: center;
-  padding: 2rem;
-  border-bottom: 1px solid #babde2;
-}
+    header h1 {
+      margin: 0;
+      line-height: 1.2;
+      animation: fadeSlideDown 1s ease-out forwards;
+    }
 
-header h1 {
-  font-family: 'Castoro', sans-serif;
-  font-size: 2.5rem;
-  margin: 0;
-  color: #fffcf5;
-}
+    .titulo-chico {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-light);
+    }
 
-.semestre {
-  margin: 2rem auto;
-  width: 90%;
-}
+    .titulo-elegante {
+      font-family: 'Castoro', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--accent);
+      position: relative;
+    }
 
-.semestre h2 {
-  font-family: 'Castoro', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #fffcf5;
-  text-align: left;
-}
+    .titulo-elegante::after {
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 6px;
+      background: linear-gradient(to right, var(--accent), transparent);
+      bottom: -10px;
+      left: 20%;
+      border-radius: 3px;
+      opacity: 0.4;
+    }
 
-.materias {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
+    .estrella {
+      position: absolute;
+      font-size: 1.6rem;
+      color: var(--accent);
+      opacity: 0.4;
+      animation: parpadeo 4s infinite ease-in-out;
+    }
 
-.materia {
-  background-color: white;
-  border: 1px solid #bfa373;
-  border-radius: 8px;
-  padding: 0.8rem 1rem;
-  min-width: 160px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+    .estrella1 { top: 10px; left: 20px; }
+    .estrella2 { top: 20px; right: 30px; }
+    .estrella3 { bottom: 20px; left: 50px; }
+    .estrella4 { bottom: 15px; right: 40px; }
 
-.materia:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
+    @keyframes parpadeo {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.3); }
+    }
 
-.materia span {
-  display: block;
-  font-size: 0.9rem;
-  color: #5a4a3f;
-}
+    @keyframes fadeSlideDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <div class="titulo-chico">Malla Curricular</div>
+      <div class="titulo-elegante">Ingeniería</div>
+      <div class="titulo-chico">de Sistemas</div>
+    </h1>
+    <button id="modoToggle">Cambiar Modo</button>
+    <div class="estrella estrella1">✦</div>
+    <div class="estrella estrella2">✦</div>
+    <div class="estrella estrella3">✦</div>
+    <div class="estrella estrella4">✦</div>
+  </header>
 
-.completada {
-  background-color: #e6dacf;
-  border-color: #bfa373;
-  text-decoration: line-through;
-  color: #5a4a3f;
-}
+  <main id="malla">
+    <!-- Secciones de semestres generadas dinámicamente desde JS -->
+  </main>
 
-.bloqueada {
-  background-color: #ddd;
-  color: #999;
-  cursor: not-allowed;
-}
+  <script src="script.js"></script>
+</body>
+</html>
