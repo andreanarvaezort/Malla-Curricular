@@ -4,7 +4,7 @@
 :root {
   /* Paleta principal (tono verde elegante inspirado en la imagen) */
   --primary: #374375;
-  --accent: #a8c3a0;
+  --accent: #f9f8f4;
   --background: #f9f8f4;
   --text-light: #fffcf5;
   --text-dark: #222;
@@ -17,7 +17,7 @@
 
 body.light {
   --primary: #ffffff;
-  --accent: #5e855a;
+  --accent: #f4f4f4;
   --background: #f4f4f4;
   --text-light: #222;
   --card-bg: #fff;
