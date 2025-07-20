@@ -4,33 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malla Curricular - Ingeniería de Sistemas</title>
+
+  <!-- FUENTES -->
   <link href="https://fonts.googleapis.com/css2?family=Urbanist&family=Castoro&display=swap" rel="stylesheet">
+
+  <!-- ESTILOS -->
   <link rel="stylesheet" href="style.css">
 </head>
-  
 <body>
   <header>
     <h1 class="titulo-elegante">Malla Curricular</h1>
     <p class="titulo-chico">Ingeniería de Sistemas</p>
-    <button id="modoToggle" aria-label="Cambiar modo claro/oscuro">
-      <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-      </svg>
-      <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun">
-        <circle cx="12" cy="12" r="4"/>
-        <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.07 6.93-1.41-1.41M6.34 6.34 4.93 4.93m0 14.14 1.41-1.41m12.02-12.02-1.41 1.41"/>
-      </svg>
-  </button>
 
-    
+    <!-- BOTÓN MODO CLARO/OSCURO -->
+    <button id="modoToggle" aria-label="Cambiar modo claro/oscuro">
+      <svg id="icon-moon" ...></svg>
+      <svg id="icon-sun" ...></svg>
+    </button>
+
+    <!-- ESTRELLAS -->
     <span class="estrella estrella1">✦</span>
     <span class="estrella estrella2">✦</span>
     <span class="estrella estrella3">✦</span>
     <span class="estrella estrella4">✦</span>
   </header>
-  
+
+  <!-- CONTENEDOR DE LA MALLA -->
   <main id="malla"></main>
 
+  <!-- SCRIPT DE LA MALLA (externo) -->
   <script src="script.js"></script>
+
+  <!-- SCRIPT DEL BOTÓN DE MODO OSCURO (interno) -->
+  <script>
+    const botonModo = document.getElementById('modoToggle');
+    const body = document.body;
+
+    const prefiereOscuro = window.matchMedia &&
+                           window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (prefiereOscuro) {
+      body.classList.add('dark');
+    }
+
+    botonModo.addEventListener('click', () => {
+      body.classList.toggle('dark');
+    });
+  </script>
 </body>
 </html>
