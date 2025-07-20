@@ -67,12 +67,27 @@ header h1 {
 .titulo-elegante {
   font-family: 'Russo One', sans-serif;
   font-size: 3rem;
+  font-weight: 400;
   color: var(--accent);
+  position: relative;
+}
+
+.titulo-elegante::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 6px;
+  background: linear-gradient(to right, #701C1C, transparent);
+  bottom: -10px;
+  left: 20%;
+  border-radius: 3px;
+  opacity: 0.4;
 }
 
 .titulo-chico {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
+  font-weight: 500;
   color: var(--text-light);
 }
 
@@ -149,7 +164,7 @@ main {
 }
 
 .semestre h2 {
-  font-family: 'Castoro', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--text-light);
@@ -206,6 +221,11 @@ main {
 }
 
 /* === RESPONSIVE === */
+@keyframes fadeSlideDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 600px) {
   .materia {
     min-width: 140px;
