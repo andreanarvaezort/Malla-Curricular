@@ -1,27 +1,36 @@
 /* === FUENTES Y RESET === */
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700&family=Castoro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Cormorant+Garamond:wght@400;700&display=swap');
 
 :root {
-  /* Paleta principal (tono verde elegante inspirado en la imagen) */
-  --primary: #374375;
-  --accent: #f9f8f4;
-  --background: #f9f8f4;
-  --text-light: #fffcf5;
-  --text-dark: #222;
+  --primary: #701C1C; /* Texto y acentos en modo claro */
+  --accent: #701C1C;
+  --background: #F0EAD6; /* Ivory Quartz */
+  --text-light: #701C1C;
   --card-bg: white;
-  --card-border: #bfa373;
+  --card-border: #A75A5A; /* borde suave para tarjetas */
   --completed-bg: #e6dacf;
   --blocked-bg: #ddd;
   --blocked-text: #999;
 }
 
+body.dark {
+  --primary: #F0EAD6; /* Texto claro */
+  --background: #1A0E10; /* Vino negro profundo */
+  --accent: #C28C8C; /* Títulos / Acentos */
+  --card-bg: #2B1A1D;
+  --card-border: #701C1C;
+  --completed-bg: #3c2b2e;
+  --blocked-bg: #3a2a2a;
+  --blocked-text: #aa8888;
+}
+
 body.light {
-  --primary: #ffffff;
-  --accent: #f4f4f4;
-  --background: #f4f4f4;
-  --text-light: #222;
+  --primary: #701C1C;
+  --accent: #701C1C;
+  --background: #F0EAD6;
+  --text-light: #701C1C;
   --card-bg: #fff;
-  --card-border: #cfcfcf;
+  --card-border: #B77E79;
   --completed-bg: #d8e8d3;
   --blocked-bg: #eee;
   --blocked-text: #888;
@@ -34,8 +43,8 @@ body.light {
 }
 
 body {
-  background-color: var(--primary);
-  color: var(--text-light);
+  background-color: var(--background);
+  color: var(--primary);
   font-family: 'Urbanist', sans-serif;
   line-height: 1.5;
   transition: all 0.3s ease;
@@ -55,46 +64,29 @@ header h1 {
   animation: fadeSlideDown 1s ease-out forwards;
 }
 
+.titulo-elegante {
+  font-family: 'Russo One', sans-serif;
+  font-size: 3rem;
+  color: var(--accent);
+}
+
 .titulo-chico {
-  font-family: 'Urbanist', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   color: var(--text-light);
 }
 
-.titulo-elegante {
-  font-family: 'Castoro', serif;
-  font-size: 3rem;
-  font-weight: 400;
-  color: var(--accent);
-  position: relative;
-}
-
-.titulo-elegante::after {
-  content: "";
-  position: absolute;
-  width: 60%;
-  height: 6px;
-  background: linear-gradient(to right, var(--accent), transparent);
-  bottom: -10px;
-  left: 20%;
-  border-radius: 3px;
-  opacity: 0.4;
-}
-
 .estrella {
+  color: #701C1C;
   position: absolute;
   font-size: 1.6rem;
-  color: var(--accent);
   opacity: 0.4;
   animation: parpadeo 4s infinite ease-in-out;
 }
-.estrella1 { top: 10px; left: 20px; }
-.estrella2 { top: 20px; right: 30px; }
-.estrella3 { bottom: 20px; left: 50px; }
-.estrella4 { bottom: 15px; right: 40px; }
+.estrella1 { top: 30px; left: 20px; }
+.estrella2 { top: 60px; right: 40px; }
+.estrella3 { bottom: 40px; left: 30px; }
+.estrella4 { bottom: 30px; right: 60px; }
 
 @keyframes parpadeo {
   0%, 100% { opacity: 0.3; transform: scale(1); }
